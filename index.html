@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1-Year Anniversary!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffccff, #e6ccff);
+            text-align: center;
+            color: #333;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 50px;
+            font-size: 3em;
+            color: #ff66cc;
+        }
+        h2 {
+            margin-top: 10px;
+            font-size: 1.5em;
+            color: #9933cc;
+        }
+        .container {
+            position: relative;
+        }
+        .gallery img {
+            width: 90%;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .love-note {
+            background: #fff0f5;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 1.2em;
+            display: none;
+        }
+        .show-note {
+            display: block;
+        }
+        button {
+            background: #ff66cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #e055b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy 1-Year Anniversary!</h1>
+    <h2>魏佳颖 & 杨茹涵</h2>
+    <p>2024年1月21日 - 我们的一周年纪念</p>
+
+    <section class="gallery">
+        <h2>我们的回忆</h2>
+        <img src="images/photo4.jpeg" alt="Anniversary Photo">
+    </section>
+
+    <button onclick="toggleNote()">打开情书</button>
+
+    <section class="love-note" id="loveNote">
+        <h2>写给我的特别的人</h2>
+        <p>老婆！今天是我们在一起的第365天啦！时间过得好快还记得去年的这会我发神经给宝宝发那种小作文，现在想想当时真不应该那样做就是给老婆带来了很多困扰，but不管怎样你现在都是我的唯一的宝宝嘻嘻嘻嘻不嘻嘻🙃。</p>
+        <p>虽然我们都没有见过面，但是在一起也没有见过面，我要把这个地球杀了🙂真的，好想好想和老婆见面。</p>
+        <p>……</p>
+        <p>总而言之 一周年快乐，老婆！我真的超级超级爱你！”</p>
+    </section>
+
+    <audio autoplay loop>
+        <source src="特别的人.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+
+    <footer>© 2024 魏佳颖 & 杨茹涵</footer>
+
+    <script>
+        function toggleNote() {
+            const note = document.getElementById("loveNote");
+            if (note.classList.contains("show-note")) {
+                note.classList.remove("show-note");
+            } else {
+                note.classList.add("show-note");
+            }
+        }
+
+        document.body.addEventListener("click", function(e) {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.style.position = "absolute";
+            heart.style.left = e.pageX + "px";
+            heart.style.top = e.pageY + "px";
+            heart.style.fontSize = "20px";
+            heart.style.animation = "fadeOut 2s forwards";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 2000);
+        });
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-50px); }
+        }
+    </script>
+</body>
+</html>
